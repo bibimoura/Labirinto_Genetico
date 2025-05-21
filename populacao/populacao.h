@@ -1,12 +1,13 @@
 #ifndef POPULACAO_H
 #define POPULACAO_H
 
-#include "../populacao/individuo/individuo.h"
+#include "individuo/individuo.h"
+#include "simulacoes/simulacoes.h"
 
-typedef struct{
+typedef struct TNoPopulacao {
     TGenotipo genotipo;
-    struct TNoPopulacao *prox;
-}TNoPopulacao;
+    struct TNoPopulacao* prox;
+} TNoPopulacao;
 
 typedef struct {
     TNoPopulacao *inicio;
@@ -20,7 +21,7 @@ typedef struct {
 TLinkedList* list_create();
 
 /**
- * Cria uma novo Nó
+ * Cria uma novo Nó 
  * @param TGenotipo* genotipo
  * @return TNoPopulacao*
  */
@@ -28,10 +29,11 @@ TNoPopulacao* TNo_create(TGenotipo* );
 
 
 /**
- * Cria uma população 
- * @param TLinkedList* lista 
+ * Cria uma população (Inserção no inicio)
+ * @param TLinkedList* 
  */
-void populacao_create(TLinkedList* );
+void populacao_create(TLinkedList*, unsigned int);
 
+void populacao_print(TLinkedList*, Labirinto);
 
 #endif

@@ -15,6 +15,7 @@ typedef struct {
     int colunas;      
 } Labirinto;
 
+
 /**
  * Vai carregar um labirinto de um arquivo.txt
  * @param const char* arquivo_labirinto.

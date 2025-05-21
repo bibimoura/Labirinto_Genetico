@@ -1,7 +1,7 @@
 #ifndef INDIVIDUO_H
 #define INDIVIDUO_H
 
-#define MAX_MOVIMENTOS 30
+#define MAX_MOVIMENTOS 50
 
 typedef struct {
 
@@ -13,7 +13,7 @@ typedef struct {
 
 /**
  * Cria um genótipo (indivíduo) que contém uma sequência de movimentos aleatórios.
- * @param TGenotipo* genotipo Ponteiro para o genótipo a ser inicializado
+ * @param TGenotipo* genotipo Ponteiro para o genótipo a ser inicializado.
  */
 void individuo_create(TGenotipo *);
 
