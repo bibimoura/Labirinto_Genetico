@@ -7,13 +7,13 @@ typedef struct {
 
     char movimentos[MAX_MOVIMENTOS];
     int cromossomo; 
-    int fitness;
+    double fitness;
 
 }TGenotipo;
 
 /**
- * Cria um genótipo (indivíduo) que contém uma sequência de movimentos aleatórios.
- * @param TGenotipo* genotipo Ponteiro para o genótipo a ser inicializado.
+ * Inicializa um genótipo com movimentos aleatórios
+ * @param genotipo Ponteiro para a estrutura TGenotipo
  */
 void individuo_create(TGenotipo *);
 

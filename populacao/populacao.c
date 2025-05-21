@@ -70,13 +70,15 @@ void populacao_print(TLinkedList* lista, Labirinto mapa) {
     while (atual != NULL) {
         Posicao pos_final;
         int colisoes = simular_caminho(mapa, &atual->genotipo, &pos_final);
+        calcular_fitness(mapa, &atual->genotipo, pos_final);
 
         printf("Individuo [%u]: ", i);
         for (int j = 0; j < atual->genotipo.cromossomo; j++) {
             printf("%c ", atual->genotipo.movimentos[j]);
         }
-        printf("\n  Posicao final: (%d, %d), Colisoes: %d\n",
-               pos_final.linha, pos_final.coluna, colisoes);
+        printf("\n[%d] Posicao final: (%d, %d), Colisoes: %d, Fitness: %.2f\n", i,
+               pos_final.linha, pos_final.coluna, colisoes, atual->genotipo.fitness);
+               puts("\n");
 
         atual = atual->prox;
         i++;

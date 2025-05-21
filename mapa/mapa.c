@@ -20,7 +20,8 @@ Labirinto labirinto_carregar(const char* arquivo_labirinto) {
     int max_cols = 0; // colunas
     char linha[1024]; // Buffer(armazena as linhas )
 
-    while (fgets(linha, sizeof(linha), arquivo)) { // lê cada linha do arquivo até o final (Lê uma linha do arquivo para o buffer linha)
+    // lê cada linha do arquivo até o final (Lê uma linha do arquivo para o buffer linha)
+    while (fgets(linha, sizeof(linha), arquivo)) {
         linha[strcspn(linha, "\n")] = '\0'; // Remove '\n'
         int len = strlen(linha); // Calcula o comprimento da linha lida
         if (len > max_cols) max_cols = len; // Atualiza max_cols
@@ -42,7 +43,8 @@ Labirinto labirinto_carregar(const char* arquivo_labirinto) {
         exit(1);
     }
     for (int i = 0; i < lin; i++) {
-        mapa.labirinto[i] = (char*)malloc(max_cols * sizeof(char)); // Aloca memória para cada linha da matriz
+        // Aloca memória para cada linha da matriz
+        mapa.labirinto[i] = (char*)malloc(max_cols * sizeof(char));
         if (!mapa.labirinto[i]) {
             printf("ERRO: Falha na alocação de memória.\n");
             fclose(arquivo);

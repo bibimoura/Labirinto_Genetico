@@ -2,13 +2,13 @@
 #include "populacao/populacao.h"
 #include "populacao/individuo/individuo.h"
 #include "simulacoes/simulacoes.h"
+#include "fitness/fitness.h"
 
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
 
 int main() {
-
 
     srand(time(NULL));
 
@@ -24,15 +24,11 @@ int main() {
    puts("\n=-=-=-=-=-=-== Populacao =-=-=-=-=-=-==\n");
    TLinkedList* lista_populacao = list_create();
    unsigned int tamanhoPopulacao = 50;
-
    populacao_create(lista_populacao, tamanhoPopulacao);
-
    populacao_print(lista_populacao, labirinto);
 
    
-   
    labirinto_free(labirinto);
-
 
 
     return 0;

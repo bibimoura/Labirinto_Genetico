@@ -4,7 +4,6 @@
 #include <stdio.h>
 #include <time.h>
 
-#define MAX_MOVIMENTOS 50
 
 void individuo_create(TGenotipo *genotipo) {
     char direcoes[4] = {'C', 'B', 'E', 'D'}; // Direções
