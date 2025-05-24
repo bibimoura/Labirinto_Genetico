@@ -20,7 +20,7 @@ Labirinto labirinto_carregar(const char* arquivo_labirinto) {
     int max_cols = 0; // colunas
     char linha[1024]; // Buffer(armazena as linhas )
 
-    // lê cada linha do arquivo até o final (Lê uma linha do arquivo para o buffer linha)
+    // Passo 2: lê cada linha do arquivo até o final (Lê uma linha do arquivo para o buffer linha)
     while (fgets(linha, sizeof(linha), arquivo)) {
         linha[strcspn(linha, "\n")] = '\0'; // Remove '\n'
         int len = strlen(linha); // Calcula o comprimento da linha lida

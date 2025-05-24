@@ -7,7 +7,6 @@
 
 int simular_caminho(Labirinto mapa, TGenotipo* genotipo, Posicao* pos){
 
-    // Inicializa a posição atual com a posição de início do labirinto
     Posicao atual = mapa.inicio; // (1,1)
     *pos = mapa.inicio;
 
@@ -16,14 +15,14 @@ int simular_caminho(Labirinto mapa, TGenotipo* genotipo, Posicao* pos){
 
     for(int i = 0; i <genotipo->cromossomo; i++){
         
-        // Usada para Inicializa a posição atual com a posição de início do labirinto
+  
         Posicao proxima = atual; 
         char movimento = genotipo->movimentos[i];
 
-        if (movimento == 'C') proxima.linha--; // Cima (move para a linha anterior)
-        else if (movimento == 'B') proxima.linha++; // Baixo (move para a próxima linha)
-        else if (movimento == 'E') proxima.coluna--; // Esquerda (move para a coluna anterior)
-        else if (movimento == 'D') proxima.coluna++; // Direita (move para a próxima coluna)
+        if (movimento == 'C') proxima.linha--; // move para a linha anterior
+        else if (movimento == 'B') proxima.linha++; // move para a próxima linha
+        else if (movimento == 'E') proxima.coluna--; // move para a coluna anterior
+        else if (movimento == 'D') proxima.coluna++; //move para a próxima coluna
 
         // Verifica se a próxima posição está fora dos limites do labirinto.
         if(proxima.linha < 0 || proxima.linha >= mapa.linhas || proxima.coluna < 0 || proxima.coluna >= mapa.colunas){
@@ -31,20 +30,20 @@ int simular_caminho(Labirinto mapa, TGenotipo* genotipo, Posicao* pos){
             break; 
         }
 
-        // Verifica se a próxima posição é uma parede (#) no labirinto.
+        // Verifica se a próxima posição é uma parede..
         if(mapa.labirinto[proxima.linha][proxima.coluna] == '#'){
             colisoes++;
-            continue;
+            break;
         }
 
-        // Atualiza a posição atual para a próxima posição
+        // Atualiza a posição atual para a próxima posição.
         atual = proxima;
 
-        //Atualiza o ponteiro pos para armazenar a posição atual
+        //Atualiza o ponteiro pos para armazenar a posição atual.
         *pos = atual;
 
         if (atual.linha == mapa.final.linha && atual.coluna == mapa.final.coluna) {
-            break; // Para ao alcançar final (E)
+            break; // Para ao alcançar o final do labirinto (E)
         }
     }
     return colisoes;

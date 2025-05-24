@@ -1,6 +1,7 @@
 #ifndef MAPA_H
 #define MAPA_H
 
+// Coordenadas
 typedef struct {
     int linha;
     int coluna;

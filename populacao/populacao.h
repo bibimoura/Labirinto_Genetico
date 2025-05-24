@@ -1,21 +1,18 @@
 #ifndef POPULACAO_H
 #define POPULACAO_H
 
-// Inclui os módulos que serão usados pela população
 #include "individuo/individuo.h"
 #include "simulacoes/simulacoes.h"
 #include "fitness/fitness.h"
 #include "mapa/mapa.h"
 
-// Nó da lista (representa um indivíduo)
 typedef struct no_Populacao {
-    TGenotipo genotipo;          // Genótipo do indivíduo
+    TGenotipo genotipo;        
     struct no_Populacao *prox;     
 } TNoPopulacao;
 
-// Estrutura da lista encadeada que representa a população
 typedef struct {
-    TNoPopulacao *inicio;      // Ponteiro para o primeiro nó
+    TNoPopulacao *inicio;
     int totalIndividuos;
 } TLinkedList;
 

@@ -35,6 +35,7 @@ void populacao_create(TLinkedList* lista, unsigned int populacao){
         individuo_create(&genotipo);
         TNoPopulacao* aux = TNo_create(&genotipo);
 
+        // se a lista estiver vazia
         if(aux != NULL){
             if(lista->inicio == NULL){
                 lista->inicio = aux;
@@ -57,7 +58,7 @@ void populacao_print(TLinkedList* lista, Labirinto mapa) {
         return;
     }
 
-    printf("Total de individuos: %u\n", lista->totalIndividuos);
+    printf("Total de individuos: %d\n", lista->totalIndividuos);
 
     if (lista->inicio == NULL) {
         printf("A população está vazia.\n");
@@ -67,12 +68,13 @@ void populacao_print(TLinkedList* lista, Labirinto mapa) {
     TNoPopulacao* atual = lista->inicio;
     unsigned int i = 0;
 
+    // enquanto (atual->prox) for diferente de NULL
     while (atual != NULL) {
         Posicao pos_final;
         int colisoes = simular_caminho(mapa, &atual->genotipo, &pos_final);
         calcular_fitness(mapa, &atual->genotipo, pos_final);
 
-        printf("Individuo [%u]: ", i);
+        printf("Individuo [%d]: ", i);
         for (int j = 0; j < atual->genotipo.cromossomo; j++) {
             printf("%c ", atual->genotipo.movimentos[j]);
         }
