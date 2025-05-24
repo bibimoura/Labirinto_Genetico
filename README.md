@@ -1,7 +1,7 @@
 <h1 align="center"> Projeto: Algoritmo Genético</h1> 
 
 # Resumo do projeto
-Este projeto implementa um algoritmo genético em linguagem C com o objetivo de encontrar caminhos eficientes em labirintos complexos. A solução é composta por indivíduos representados por genótipos (sequência de movimentos) que evoluem ao longo de gerações para melhorar sua performance na navegação do labirinto.
+Este projeto implementa um algoritmo genético em linguagem C com o objetivo de encontrar caminhos eficientes em labirintos complexos.
 
 <p align="center">
    <img src="http://img.shields.io/static/v1?label=STATUS&message=COMECADO&color=GREEN&style=for-the-badge"/>
